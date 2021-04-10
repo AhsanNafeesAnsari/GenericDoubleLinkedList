@@ -86,16 +86,12 @@ public class MyLinkedList<T>{
             if(((Comparable<T>)current.data).compareTo(obj)==0){
                 if(current == this.head){
                     return removeFirst();
-                    /*                    this.head = this.head.next;*/
                 }
                 else if(current == this.tail){
                     return removeLast();
-                    /*this.tail = prev;
-                    prev.next = null;*/
                 }
                 else{
                     current.prev.next = current.next;
-                    //prev.next = current.next;
                 }
                 this.currentSize--;
                 return current.data;
@@ -136,8 +132,6 @@ public class MyLinkedList<T>{
         if(this.head == null){
             insertFirst(data);
             return;
-            /*this.head = newNode;
-            this.tail = newNode;*/
         }
         else{
             newNode.prev = this.tail;
@@ -171,7 +165,6 @@ public class MyLinkedList<T>{
             newNode.prev = previousNode;
             previousNode.next.prev = newNode;
             previousNode.next = newNode;
-            //this.tail = this.lastNode();
             currentSize++;
         }
     }

@@ -125,10 +125,8 @@ public class MyLinkedList<T>{
         if(this.head == null){
             this.tail = newNode;
         }
-        if(this.head != null){
-            newNode.next = this.head;
-            this.head.prev = newNode;
-        }
+        newNode.next = this.head;
+        this.head.prev = newNode;
         this.head = newNode;
         currentSize++;
     }
@@ -136,8 +134,10 @@ public class MyLinkedList<T>{
         ListNode<T> newNode = new ListNode<>(data);
 
         if(this.head == null){
-            this.head = newNode;
-            this.tail = newNode;
+            insertFirst(data);
+            return;
+            /*this.head = newNode;
+            this.tail = newNode;*/
         }
         else{
             newNode.prev = this.tail;
@@ -148,12 +148,11 @@ public class MyLinkedList<T>{
     }
 
     public void insertAt(T data, int position){
-        //TODO
         if(position == 0){
             insertFirst(data);
             return;
         }
-        else if(position == this.currentSize+1){
+        else if(position == this.currentSize){
             insertLast(data);
             return;
         }

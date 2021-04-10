@@ -6,33 +6,31 @@ public class Main {
 
         MyLinkedList<Integer> first = new MyLinkedList<>();
 
-        // empty
-        //System.out.println(first.peakLast());
-
-
-        // 1 element
+        first.removeElement(0);
         first.add(1);
-        //System.out.println(first.peakLast());
-
-        // middle
         first.add(2);
         first.add(3);
-        first.add(4);
-        first.add(5);
-        //System.out.println(first.peakLast());
-        for (Iterator<Integer> it = first.iterator(); it.hasNext(); ) {
-            int i = it.next();
-            System.out.println(i);
+        first.removeFirst();
+        first.insertFirst(1);
+        first.removeLast();
+        first.insertLast(3);
+        first.insertAt(0,0);
+        first.insertAt(11,1);
+        first.insertAt(3,3);
+        first.insertAt(6,6);
+        first.insertAt(5,6);
+        first.removeElement(0);
+        first.removeElement(6);
+        first.removeLast();
 
+        Iterator<Integer> it = first.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
         }
-
-
-        // beginning element
-        //System.out.println(first.peakLast());
-
-        //last element
-        //System.out.println(first.peakLast());
-
+        for (Iterator<Integer> iter = first.iterator(); iter.hasNext(); ) {
+            int i = iter.next();
+            System.out.println(i);
+        }
 
     }
 };

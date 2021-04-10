@@ -70,15 +70,9 @@ public class MyLinkedList<T>{
     public T removeLast(){
         if(currentSize>0){
             T removed = this.tail.data;
-            this.tail.prev.next = null;
-/*            ListNode<T> temp = this.head;
+            this.tail = this.tail.prev;
+            this.tail.next = null;
 
-            for (int i = 1; i < this.currentSize-1; i++) {
-                temp = temp.next;
-            }
-
-            this.tail = temp;
-            this.tail.next = null;*/
             this.currentSize--;
             return removed;
         }
